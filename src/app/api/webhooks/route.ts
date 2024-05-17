@@ -63,7 +63,7 @@ export async function POST(req: Request) {
         },
       });
       await resend.emails.send({
-        from: "PhoneCase <sharma312006@gmail.com>",
+        from: "CaseCobra <sharma312006@gmail.com>",
         to: [event.data.object.customer_details.email],
         subject: "Thanks for your order!",
         react: OrderReceivedEmail({
@@ -75,8 +75,8 @@ export async function POST(req: Request) {
             city: shippingAddress!.city!,
             country: shippingAddress!.country!,
             postalCode: shippingAddress!.postal_code!,
-            street: shippingAddress!.state!,
-            state: shippingAddress!.state!,
+            street: shippingAddress!.line1!,
+            state: shippingAddress!.state,
           },
         }),
       });
