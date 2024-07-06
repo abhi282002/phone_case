@@ -24,7 +24,7 @@ import { auth } from "@/auth";
 const Page = async () => {
   const session = await auth();
 
-  const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+  const ADMIN_EMAIL = "sharma312006@gmail.com";
 
   if (!session?.user || session?.user.email !== ADMIN_EMAIL) {
     return notFound();
