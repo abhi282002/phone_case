@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { LoginForm } from "./login-form";
+import { useState } from "react";
+import useLoginModel from "@/hooks/userLoginModel";
 
 interface LoginButtonProps {
   children: React.ReactNode;
@@ -14,20 +16,13 @@ const LoginButton: React.FC<LoginButtonProps> = ({
   mode = "redirect",
   asChild,
 }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const loginModel = useLoginModel();
   const router = useRouter();
   const onClick = () => {
     router.push("/auth/login");
+    loginModel.onOpen();
   };
-  // if (mode == "modal") {
-  //   return (
-  //     <Dialog>
-  //       <DialogTrigger>{children}</DialogTrigger>
-  //       <DialogContent className="p-0 w-auto bg-transparent border-none">
-  //         <LoginForm />
-  //       </DialogContent>
-  //     </Dialog>
-  //   );
-  // }
   return (
     <span onClick={onClick} className="cursor-pointer">
       {children}
