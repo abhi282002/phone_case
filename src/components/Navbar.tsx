@@ -53,7 +53,7 @@ const Navbar = async () => {
             ) : (
               <>
                 <Link
-                  href={"/api/auth/register"}
+                  href={"/auth/register"}
                   className={buttonVariants({
                     size: "sm",
                     variant: "ghost",
