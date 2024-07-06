@@ -26,6 +26,9 @@ export async function POST(req: Request) {
         throw new Error("Missing user email");
       }
       const session = event.data.object as Stripe.Checkout.Session;
+
+      console.log("sees", session);
+
       const { userId, orderId } = session.metadata || {
         userId: null,
         orderId: null,

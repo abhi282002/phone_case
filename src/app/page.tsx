@@ -25,7 +25,7 @@ export default function Home() {
               <p className="mt-8 text-lg lg:pr-10 max-w-prose text-center lg:text-left text-balance md:text-wrap">
                 Capture your favorite memories with your own,{" "}
                 <span className="font-semibold ">one-of-one</span> phone case.
-                CaseCobra allows you to protect your memories, not just your
+                PhoneCase allows you to protect your memories, not just your
                 phone case.
               </p>
               <ul className="mt-8 space-y-2 text-left font-medium flex flex-col items-center sm:items-start">
@@ -142,7 +142,7 @@ export default function Home() {
                   className="rounded-full  h-12 w-12 object-cover"
                 />
                 <div className="flex flex-col">
-                  <p className="font-semibold">Jonathan</p>
+                  <p className="font-semibold">Sandip Kumar</p>
                   <div className="flex gap-1.5 items-center text-zinc-600">
                     <Check className="h-4 w-4 stroke-[3px] text-green-600 " />
                     <p className="text-sm">Verified Purchase</p>
@@ -177,7 +177,7 @@ export default function Home() {
                   className="rounded-full  h-12 w-12 object-cover"
                 />
                 <div className="flex flex-col">
-                  <p className="font-semibold">Josh</p>
+                  <p className="font-semibold">Priyanka</p>
                   <div className="flex gap-1.5 items-center text-zinc-600">
                     <Check className="h-4 w-4 stroke-[3px] text-green-600 " />
                     <p className="text-sm">Verified Purchase</p>

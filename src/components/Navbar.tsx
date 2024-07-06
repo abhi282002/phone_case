@@ -1,12 +1,19 @@
 import Link from "next/link";
+
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { buttonVariants } from "./ui/button";
 import { ArrowRight } from "lucide-react";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import LoginButton from "./auth/login-button";
+import { Button } from "@react-email/components";
+
+import { LogoutButton } from "./auth/logout-button";
+import { auth } from "@/auth";
 
 const Navbar = async () => {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const session = await auth();
+  const user = session?.user;
+  console.log(user);
+
   const isAdmin = user?.email === process.env.ADMIN_EMAIL;
 
   return (
@@ -19,15 +26,8 @@ const Navbar = async () => {
           <div className="h-full flex items-center space-x-4">
             {user ? (
               <>
-                <Link
-                  href={"/api/auth/logout"}
-                  className={buttonVariants({
-                    size: "sm",
-                    variant: "ghost",
-                  })}
-                >
-                  Sign out
-                </Link>
+                <LogoutButton>Logout</LogoutButton>
+
                 {isAdmin ? (
                   <Link
                     href={"/dashboard"}
@@ -61,16 +61,12 @@ const Navbar = async () => {
                 >
                   Sign up
                 </Link>
+                <div>
+                  <LoginButton mode="modal" asChild>
+                    <Button>Sign in</Button>
+                  </LoginButton>
+                </div>
 
-                <Link
-                  href={"/api/auth/login"}
-                  className={buttonVariants({
-                    size: "sm",
-                    variant: "ghost",
-                  })}
-                >
-                  Login
-                </Link>
                 <div className="h-8 w-px bg-zinc-200 hidden sm:block" />
                 <Link
                   href={"/configure/upload"}

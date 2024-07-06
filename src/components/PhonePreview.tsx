@@ -65,6 +65,7 @@ const PhonePreview = ({
           className="pointer-events-none h-full w-full antialiased rounded-md"
         />
       </div>
+      
     </AspectRatio>
   );
 };
