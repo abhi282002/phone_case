@@ -20,6 +20,8 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { id } = configuration;
   const session = useSession();
   const user = session.data?.user!;
+  console.log("user", user);
+
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(false);
   useEffect(() => setShowConfetti(true));
