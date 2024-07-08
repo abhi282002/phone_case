@@ -87,10 +87,10 @@ export const LoginForm: FC = ({}: {}) => {
         <DialogHeader>
           <div className="relative mx-auto w-24 h-24 mb-2">
             <Image
-              src={"/snake-1.png"}
+              src={"/snake-1.jpg"}
               fill
-              alt="snake image"
-              className="object-contain"
+              alt="Phone image"
+              className="object-contain rounded-full "
             />
           </div>
           <DialogTitle className="text-3xl text-center font-bold tracking-tight text-gray-900">

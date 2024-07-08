@@ -15,7 +15,7 @@ export default function Home() {
           <div className="col-span-2 px-6 lg:px-0 lg:pt-4">
             <div className="relative mx-auto text-center lg:text-left flex flex-col items-center lg:items-start">
               <div className="absolute w-28 left-0 -top-20 hidden lg:block">
-                <img src="/snake-1.png" className="w-full" />
+                <img src="/snake-1.jpg" className="w-full" />
               </div>
               <h1 className="relative w-fit tracking-tight text-balance mt-16 font-bold !leading-tight text-gray-900 text-5xl md:text-6xl lg:text-7xl ">
                 Your Image on a{" "}
@@ -53,7 +53,7 @@ export default function Home() {
                   />
                   <img
                     className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-100  "
-                    src="/users/user-2.png"
+                    src="/users/user-2.jpg"
                     alt="user image"
                   />
                   <img
@@ -113,7 +113,10 @@ export default function Home() {
               </span>{" "}
               say
             </h2>
-            <img src="/snake-2.png" className="w-24 order-0 lg:order-2 " />
+            <img
+              src="/snake.png"
+              className="w-24 rounded-lg order-0 lg:order-2 "
+            />
           </div>
           <div className="mx-auto grid max-w-2xl grid-cols-1 px-4 lg:mx-0 lg:max-w-none lg:grid-cols-2 gap-y-16 ">
             <div className="flex flex-auto flex-col gap-4 lg:pr-8 xl:pr-20">
@@ -161,7 +164,7 @@ export default function Home() {
               <div className="text-lg leading-8">
                 <p>
                   "I usually keep my phone together with my keys in my pocket
-                  and that led to some pretty heavy scratchmarks on all of my
+                  and that led to some pretty heavy scratch marks on all of my
                   last phone cases. This one, besides a barely noticeable
                   scratch on the corner,{" "}
                   <span className="p-0.5 bg-slate-800 text-white">
@@ -172,12 +175,12 @@ export default function Home() {
               </div>
               <div className="flex gap-4 mt-2">
                 <img
-                  src="/users/user-2.png"
+                  src="/users/user-3.png"
                   alt="user"
                   className="rounded-full  h-12 w-12 object-cover"
                 />
                 <div className="flex flex-col">
-                  <p className="font-semibold">Priyanka</p>
+                  <p className="font-semibold">Priyanka Sharma</p>
                   <div className="flex gap-1.5 items-center text-zinc-600">
                     <Check className="h-4 w-4 stroke-[3px] text-green-600 " />
                     <p className="text-sm">Verified Purchase</p>
