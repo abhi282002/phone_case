@@ -8,11 +8,12 @@ import { Button } from "@react-email/components";
 
 import { LogoutButton } from "./auth/logout-button";
 import { auth } from "@/auth";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = async () => {
   const session = await auth();
   const user = session?.user;
-  console.log(user);
 
   const isAdmin = user?.email === "sharma312006@gmail.com";
 
@@ -49,6 +50,12 @@ const Navbar = async () => {
                   Create case
                   <ArrowRight className="ml-1.5 h-5 w-5" />
                 </Link>
+                <Avatar>
+                  <AvatarImage src={session?.user.image || ""} />
+                  <AvatarFallback className="bg-sky-500">
+                    <FaUser className="text-white" />
+                  </AvatarFallback>
+                </Avatar>
               </>
             ) : (
               <>

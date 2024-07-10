@@ -148,34 +148,36 @@ export const LoginForm: FC = ({}: {}) => {
                             </FormItem>
                           )}
                         />
-                        <FormField
-                          control={form.control}
-                          name="password"
-                          render={({ field }) => (
-                            <FormItem>
-                              <FormLabel>Password</FormLabel>
-                              <FormControl>
-                                <Input
-                                  {...field}
-                                  disabled={isPending}
-                                  placeholder="*********"
-                                  type="password"
-                                />
-                              </FormControl>
-                              <Button
-                                size={"sm"}
-                                variant={"link"}
-                                asChild
-                                className="px-0 font-normal"
-                              >
-                                <Link href={"/auth/reset"}>
-                                  Forgot Password?
-                                </Link>
-                              </Button>
-                              <FormMessage />
-                            </FormItem>
-                          )}
-                        />
+                        {
+                          <FormField
+                            control={form.control}
+                            name="password"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Password</FormLabel>
+                                <FormControl>
+                                  <Input
+                                    {...field}
+                                    disabled={isPending}
+                                    placeholder="*********"
+                                    type="password"
+                                  />
+                                </FormControl>
+                                <Button
+                                  size={"sm"}
+                                  variant={"link"}
+                                  asChild
+                                  className="px-0 font-normal"
+                                >
+                                  <Link href={"/auth/reset"}>
+                                    Forgot Password?
+                                  </Link>
+                                </Button>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        }
                       </div>
                     )}
                   </div>

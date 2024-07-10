@@ -32,7 +32,9 @@ export const {
       }
       //Prevent sign in without email verification
       //@ts-ignore
+
       const existingUser = await getUserById(user.id);
+
       if (!existingUser?.emailVerified) return false;
       //TODO : ADD 2FA CHECK
       if (existingUser.isTwoFactorEnabled) {
