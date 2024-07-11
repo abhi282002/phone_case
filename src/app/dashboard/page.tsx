@@ -23,6 +23,7 @@ import { auth } from "@/auth";
 
 const Page = async () => {
   const session = await auth();
+  console.log(session);
 
   const ADMIN_EMAIL = "sharma312006@gmail.com";
 

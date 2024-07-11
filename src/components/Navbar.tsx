@@ -14,6 +14,7 @@ import { FaUser } from "react-icons/fa";
 const Navbar = async () => {
   const session = await auth();
   const user = session?.user;
+  console.log(user);
 
   const isAdmin = user?.email === "sharma312006@gmail.com";
 

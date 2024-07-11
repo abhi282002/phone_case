@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { BASE_PRICE, PRODUCT_PRICES } from "@/config/products";
 import { cn, formatPrice } from "@/lib/utils";
 import { COLORS, FINISHES, MODELS } from "@/validators/option-validator";
-import { Configuration } from "@prisma/client";
+import { Configuration, User } from "@prisma/client";
 import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Check } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -19,7 +19,9 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
   const { toast } = useToast();
   const { id } = configuration;
   const session = useSession();
-  const user = session.data?.user!;
+  useEffect(() => {}, [session]);
+  const sessio = useSession();
+  const user = sessio.data?.user;
   console.log("user", user);
 
   const [showConfetti, setShowConfetti] = useState<boolean>(false);
@@ -63,7 +65,7 @@ const DesignPreview = ({ configuration }: { configuration: Configuration }) => {
       //create payment session
       createPaymentSession({ configId: id });
     } else {
-      //need to login first
+      // need to login first
       localStorage.setItem("configurationId", id);
       setIsLoginModalOpen(true);
     }

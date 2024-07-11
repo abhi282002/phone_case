@@ -1,6 +1,7 @@
 import { db } from "@/db";
 import { notFound } from "next/navigation";
 import DesignPreview from "./DesignPreview";
+import { auth } from "@/auth";
 
 interface PageProps {
   searchParams: {
@@ -12,6 +13,7 @@ export default async function page({ searchParams }: PageProps) {
   if (!id || typeof id !== "string") {
     return notFound();
   }
+  const session = await auth();
   const configuration = await db.configuration.findUnique({
     where: { id },
   });
